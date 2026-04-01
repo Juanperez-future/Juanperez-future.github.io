@@ -1,0 +1,488 @@
+[blog_futurista.html](https://github.com/user-attachments/files/26422890/blog_futurista.html)
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas de Fuerzas Subterráneas — Prospectiva Estratégica</title>
+    <meta name="description" content="Análisis prospectivo, pensamiento sistémico y escenarios 2030-2050. El futuro no se predice — se mapea.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0A0A0A;
+            --bg-secondary: #1A1A2E;
+            --accent-primary: #00D9FF;
+            --accent-secondary: #B455FF;
+            --text-primary: #E8E8E8;
+            --text-secondary: #A0A0A0;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated grid background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px),
+                linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            animation: gridScroll 20s linear infinite;
+        }
+
+        @keyframes gridScroll {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-primary);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero section */
+        .hero {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 8rem 2rem 6rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #FFFFFF, var(--accent-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero .tagline {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .hero .description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: var(--bg-primary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        /* Articles grid */
+        .articles {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            margin: 1rem auto 0;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .article-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+        }
+
+        .article-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .article-category {
+            background: rgba(0, 217, 255, 0.1);
+            color: var(--accent-primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .article-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .article-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .read-more {
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .read-more:hover {
+            gap: 0.8rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            margin-top: 6rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">ATLAS ·  FUERZAS SUBTERRÁNEAS</div>
+            <ul class="nav-links">
+                <li><a href="#articulos">Artículos</a></li>
+                <li><a href="#prospectiva">Prospectiva</a></li>
+                <li><a href="#metodo-vfa">Método VFA</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>El futuro no se predice.<br>Se mapea.</h1>
+            <p class="tagline">Sigue si te incomoda lo correcto</p>
+            <p class="description">
+                Análisis prospectivo de fuerzas que nadie está mirando. Pensamiento sistémico aplicado 
+                a escenarios 2030-2050. Consultoría estratégica para organizaciones que no reaccionan — anticipan.
+            </p>
+            <div class="cta-buttons">
+                <a href="#articulos" class="btn btn-primary">Explorar artículos</a>
+                <a href="#metodo-vfa" class="btn btn-secondary">Conocer método VFA</a>
+            </div>
+        </section>
+
+        <section class="articles" id="articulos">
+            <h2 class="section-title">Últimos análisis prospectivos</h2>
+            <div class="articles-grid">
+                
+                <!-- Article 1 -->
+                <article class="article-card">
+                    <div class="article-meta">
+                        <span class="article-category">OLIGOPOLIOS TECNOLÓGICOS</span>
+                        <span>2040</span>
+                    </div>
+                    <h3>AGI Oligopolio — 3 empresas controlan la inteligencia artificial general</h3>
+                    <p>OpenAI, DeepMind y Anthropic lideran la carrera hacia AGI. Para 2028 una alcanza capacidades que superan al humano en todas las tareas cognitivas. El que llegue primero no gana un mercado — redefine poder global.</p>
+                    <a href="articulo-agi.html" class="read-more">Leer análisis completo →</a>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="article-card">
+                    <div class="article-meta">
+                        <span class="article-category">PENSAMIENTO SISTÉMICO</span>
+                        <span>2040</span>
+                    </div>
+                    <h3>El colapso silencioso del fósforo</h3>
+                    <p>Marruecos controla el 70% de las reservas mundiales de fósforo. Sin fósforo, no hay agricultura. El pico de extracción llega entre 2030-2040. Nadie habla de esto porque el fósforo no es sexy como el petróleo.</p>
+                    <a href="articulo-fosforo.html" class="read-more">Leer análisis completo →</a>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="article-card">
+                    <div class="article-meta">
+                        <span class="article-category">GEOPOLÍTICA CORPORATIVA</span>
+                        <span>2032</span>
+                    </div>
+                    <h3>La primera guerra corporativa</h3>
+                    <p>En 2022 Elon Musk apagó Starlink durante una operación militar ucraniana. Sin votar. Sin congreso. Cuando una corporación decida atacar en lugar de solo apoyar, ¿quién tiene autoridad para detenerla?</p>
+                    <a href="articulo-guerra-corporativa.html" class="read-more">Leer análisis completo →</a>
+                </article>
+
+                <!-- Article 4 -->
+                <article class="article-card">
+                    <div class="article-meta">
+                        <span class="article-category">PENSAMIENTO SISTÉMICO</span>
+                        <span>2038</span>
+                    </div>
+                    <h3>La inversión demográfica — Más abuelos que nietos</h3>
+                    <p>Para 2040 habrá 3 personas mayores de 65 por cada menor de 5. Las democracias se convierten en gerontocracias de facto. El votante promedio tendrá 55 años y elegirá su pensión sobre tu futuro.</p>
+                    <a href="articulo-demografia.html" class="read-more">Leer análisis completo →</a>
+                </article>
+
+                <!-- Article 5 -->
+                <article class="article-card">
+                    <div class="article-meta">
+                        <span class="article-category">INTERFACES HUMANO-MÁQUINA</span>
+                        <span>2035</span>
+                    </div>
+                    <h3>Dos especies humanas</h3>
+                    <p>Para 2032 la edición genética será legal en 50 países. Inmunidad al cáncer, IQ +30 puntos, 20 años más de vida por $50.000. Para 2040 editados y naturales podrían no reproducirse entre sí. Técnicamente: dos especies.</p>
+                    <a href="articulo-dos-especies.html" class="read-more">Leer análisis completo →</a>
+                </article>
+
+                <!-- Article 6 -->
+                <article class="article-card">
+                    <div class="article-meta">
+                        <span class="article-category">INFRAESTRUCTURA</span>
+                        <span>2037</span>
+                    </div>
+                    <h3>La gran desconexión infraestructural</h3>
+                    <p>La tubería que te trae agua tiene 50 años. El puente que cruzas tiene 60. La red eléctrica fue construida en los 70. Todo está fallando al mismo tiempo. Y nadie tiene dinero para arreglarlo.</p>
+                    <a href="articulo-infraestructura.html" class="read-more">Leer análisis completo →</a>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="articles" id="metodo-vfa">
+            <h2 class="section-title">Método VFA — Visión · Fricción · Anticipación</h2>
+            <div style="max-width: 800px; margin: 0 auto; padding: 3rem 2rem;">
+                <p style="color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.8; font-size: 1.1rem;">
+                    Metodología propietaria de consultoría prospectiva para organizaciones que necesitan tomar 
+                    decisiones estratégicas en entornos de alta incertidumbre. No predecimos el futuro — 
+                    construimos mapas de futuros posibles y diseñamos la agenda de decisiones que aumenta 
+                    probabilidad del escenario deseado.
+                </p>
+                <a href="#contacto" class="btn btn-primary" style="display: inline-block;">Solicitar consultoría VFA</a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacto">
+        <div class="footer-content">
+            <p><strong>Atlas de Fuerzas Subterráneas</strong></p>
+            <p>Consultoría prospectiva · Pensamiento sistémico · Escenarios estratégicos 2030-2050</p>
+            <p>Colombia · Análisis en español · Alcance global</p>
+            <div class="social-links">
+                <a href="https://instagram.com/wildcards.atlas" target="_blank">Instagram</a>
+                <a href="mailto:contacto@tudominio.com">Email</a>
+                <a href="#" target="_blank">LinkedIn</a>
+            </div>
+            <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;">
+                © 2025 Juan David Pérez. Todos los análisis prospectivos publicados en este sitio.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
