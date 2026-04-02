@@ -13,11 +13,11 @@
 
 const articles = [
     {
-        categoria: "OLIGOPOLIOS TECNOLÓGICOS",
-        horizonte: "2030",
-        titulo: "AGI Oligopolio — 3 empresas controlan la inteligencia artificial general",
-        descripcion: "OpenAI, DeepMind y Anthropic lideran la carrera hacia AGI. Para 2028 una alcanza capacidades que superan al humano en todas las tareas cognitivas. El que llegue primero no gana un mercado — redefine poder global.",
-        archivo: "articulos/agi-oligopolio.html"
+        categoria: "PENSAMIENTO SISTÉMICO",
+        horizonte: "2045",
+        titulo: "La inversión demográfica",
+        descripcion: "Para 2040 habrá 3 personas mayores de 65 por cada menor de 5. El votante promedio tendrá 55 años.",
+        archivo: "articulos/inversion-demografica.html"
     },
     {
         categoria: "PENSAMIENTO SISTÉMICO",
